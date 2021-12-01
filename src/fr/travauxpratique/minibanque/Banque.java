@@ -6,18 +6,18 @@ import java.util.Scanner;
 
 public class Banque {
 
-    public Client[] clients = new Client[100];
+    public ArrayList<Client> clients = new ArrayList<Client>();
 
 
     public void ajouterClient(String nom_du_client) {
-        ArrayList<String> arrayClients = new ArrayList<String>();
+        clients.add(new Client(nom_du_client));
     }
 
     public void bilanClient(int numero_du_client) {
 
     }
 
-    public void afficherClient() {
+    public void afficherBilan() {
 
     }
 
@@ -30,10 +30,12 @@ public class Banque {
         System.out.println("Le client "+nom_client+" a été créé.");
     }
 
-    public static void interaction_2() {
+    public void interaction_2() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Quel client?");
-
+        for (int i = 0; i < clients.size(); i++) {
+            System.out.println((i+1)+") "+clients.get(i).getNom());
+        }
     }
 
     public void interaction() {
