@@ -6,22 +6,22 @@ import java.util.Scanner;
 
 public class Banque {
 
-    public static Client[] clients = new Client[100];
+    public Client[] clients = new Client[100];
 
 
-    public static void ajouterClient(String nom_du_client) {
+    public void ajouterClient(String nom_du_client) {
         ArrayList<String> arrayClients = new ArrayList<String>();
     }
 
-    public static void bilanClient(int numero_du_client) {
+    public void bilanClient(int numero_du_client) {
 
     }
 
-    public static void afficherClient() {
+    public void afficherClient() {
 
     }
 
-    public static void interaction_1() {
+    public void interaction_1() {
         Scanner scanner = new Scanner(System.in);
         scanner.useDelimiter("\n");
         System.out.println("Entrez le nom du client: ");
@@ -36,7 +36,7 @@ public class Banque {
 
     }
 
-    public static void interaction() {
+    public void interaction() {
         Scanner scanner = new Scanner(System.in);
         int userChoice = 0;
         boolean isMenu = true;

@@ -10,19 +10,19 @@ public class Client {
         this.nom = nom_du_client;
     }
 
-    public static String getNom(){
+    public String getNom(){
         return "toto";
     }
 
-    public static float getSolde() {
+    public float getSolde() {
         return 0;
     }
 
-    public static void afficherSolde() {
+    public void afficherSolde() {
 
     }
 
-    public static void ajouterCompte() {
+    public void ajouterCompte() {
 
     }
 }
