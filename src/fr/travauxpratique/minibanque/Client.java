@@ -23,6 +23,6 @@ public class Client {
     }
 
     public void ajouterCompte() {
-
+        Compte compte = new Compte(1);
     }
 }
