@@ -27,9 +27,9 @@ public class Compte {
         System.out.println("Le solde du client "+this.numero+" est de : "+this.solde+" Euros");
     }
 
-    public void virer(float valeur, int compteDestinataire) {
-        this.solde = solde - valeur;
-
+    public void virer(float valeur, Compte compteDestinataire) {
+        this.retrait(valeur);
+        compteDestinataire.depot(valeur);
     }
 
 }

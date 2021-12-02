@@ -4,30 +4,34 @@ import java.util.ArrayList;
 
 public class Client {
 
-    public ArrayList<Compte> comptes = new ArrayList<Compte>();
-    private String nom = new String();
+    private static final int NB_COMPTES_MAX = 100;
+    private String nom;
+    private Compte [] comptes;
+    private int nbComptes;
 
     public Client(String nom_du_client){
+        this.nbComptes = 0;
         this.nom = nom_du_client;
+        this.comptes = new Compte[NB_COMPTES_MAX];
     }
 
     public String getNom() {
-        return nom;
+        return this.nom;
     }
 
-    public float getSolde(int numeroCompte) {
-        return comptes.get(numeroCompte).getSolde();
+    public float getSolde() {
+        int somme=0;
+        for (int i = 0; i < this.nbComptes; i++) {
+            somme += this.comptes[i].getSolde();
+        }
+        return somme;
     }
 
     public void afficherSolde() {
-        float total=0;
-        for (int i = 0; i < comptes.size(); i++) {
-            total = total + comptes.get(i).getSolde();
-        }
-        System.out.println("Le solde du client "+this.nom+" est de : "+total+" Euros");
+        System.out.println("Le solde du compte est de :"+this.getSolde());
     }
 
     public void ajouterCompte() {
-        comptes.add(new Compte(comptes.size()+1));
+        this.comptes[this.nbComptes++] = new Compte(this.nbComptes);
     }
 }
